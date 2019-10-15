@@ -2,14 +2,27 @@
 
 ## Установка
 1. Первым делом нужно склонировать проект в нужный каталог:
-```
-```
-5. Далее настраиваем хост чтобы он "смотрел" на public каталог проекта. Здесь все зависит от окружения: apache/nginx или возможно symfony dev server.
-2. 
+    ```
+    cd /my/directory/project
+    git clone https://github.com/monsieur-octopus/swivl.git .
+    ```
+2. Запускаем установку пакетов из composer: 
+    ```
+    composer install
+    ```
+3. В файле `.env` указываем правильные доступы к бд в строке `DATABASE_URL`
+4. Если бд еще не создана - создаем выполняя запрос:
+   ```
+   php bin/console doctrine:database:create
+   ```  
+5. Накатываем миграции для создания нужных для приложения таблиц:
+   ```
+   php bin/console doctrine:migrations:migrate
+   ```   
+6. Последним шагом настраиваем хост чтобы он "смотрел" на `public/` каталог нашего проекта. Здесь все зависит от окружения: apache/nginx или, возможно. symfony dev server.
 
-## Комментарии
- - 1
- - 2
+DONE!
+
  
 
 ## Api документация
@@ -63,9 +76,10 @@ URL: `/classroom/{id}`
 ```json
 {
 	"name":   "Here_your_classname",
-	"active": true | false
+	"active": true/false
 }
 ```
+*Во время обновления можно указать как все нужные поля, так и одно 
 
 ---
 
