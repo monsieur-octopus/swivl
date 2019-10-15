@@ -1,3 +1,40 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+get_one:
+    path: /classroom/{id}
+    controller: App\Controller\ClassroomController::getOne
+    methods: GET
+    requirements:
+        id: '\d+'
+
+get_list:
+    path: /classroom/all/{page}
+    controller: App\Controller\ClassroomController::getList
+    methods: GET
+    requirements:
+        page: '\d+'
+
+add:
+    path: /classroom
+    controller: App\Controller\ClassroomController::add
+    methods: POST
+
+edit:
+    path: /classroom/{id}
+    controller: App\Controller\ClassroomController::edit
+    methods: PATCH
+    requirements:
+        id: '\d+'
+
+edit_active:
+    path: /classroom/{id}/active/{active}
+    controller: App\Controller\ClassroomController::setActive
+    methods: PATCH
+    requirements:
+        id: '\d+'
+        active: '1|0'
+
+delete:
+    path: /classroom/{id}
+    controller: App\Controller\ClassroomController::delete
+    methods: DELETE
+    requirements:
+        id: '\d+'
