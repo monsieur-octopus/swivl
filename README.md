@@ -59,7 +59,7 @@ URL: `/classroom/{id}`
 ```json
 {
 	"name":   "Here_your_classname",
-  "active": true | false
+	"active": true | false
 }
 ```
 
