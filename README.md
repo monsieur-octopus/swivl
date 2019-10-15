@@ -16,6 +16,7 @@
 
 ***Получение класса***
 
+
 URL: `/classroom/{id}`
 
 метод: `GET`
@@ -47,6 +48,8 @@ URL: `/classroom`
 	"name": "Here_your_classname"
 }
 ```
+
+
 
 
 ***Редактирование класса***
